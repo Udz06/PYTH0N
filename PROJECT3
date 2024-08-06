@@ -1,0 +1,44 @@
+from tkinter import *
+from tkinter import messagebox
+
+tab= Tk()
+tab.title("Your age and height")
+tab.configure(bg='#282527')
+tab.geometry('720x400')
+box = Frame(bg='#282527')
+
+Title =Label(box, text=("Wala ako maisip na Title"),bg='#282527',fg="White",font=("Arial",30))
+Title.grid(row=0,column=0,columnspan=11,sticky="news",pady= 50)
+
+def Process():
+
+    a= "18"
+    b="179"
+    c="150"
+
+    if Ageinput.get() >= a:
+        if Heightinput.get() >= b:
+           messagebox.showinfo(title="Your Age and Height",message="Tall and Legal Age")
+        elif Heightinput.get() >= c:
+            messagebox.showinfo(title="Your Age and Height",message="Average and Legal Age")
+        else:
+            messageboxshowinfo(title="Your Age and Height",message= "Short and Legal Age" )
+    else:
+        messagebox.showwarning(title="You are too young",message="Too Young")
+
+Heightlabel= Label(box,text=("Enter your Height:"),font=30,bg='#282527',fg="White")
+Heightinput= Entry(box)
+Heightlabel.grid(row=2,column=1,pady=15)
+Heightinput.grid(row=2,column=2,)
+
+Agelabel=Label(box,text=("Enter your Enter your Age:"),font=30,bg='#282527',fg="White")
+Ageinput= Entry(box)
+
+Agelabel.grid(row=3,column=1,pady=15)
+Ageinput.grid(row=3,column=2)
+
+Btn= Button(box,text="Enter",font=25,bg='#dc5d03',fg="White", command= Process)
+Btn.grid(row=4,columnspan=7,column=0,pady=30)
+
+box.pack()
+tab.mainloop()
