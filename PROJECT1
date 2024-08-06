@@ -1,0 +1,59 @@
+from tkinter import *
+
+root = Tk()
+root.title("format of grade")
+root.geometry("510x300")
+
+lbl=Label(root,text="Enter your grade:",fg="RED", font=("IMPACT",20))
+lbl.grid(row=0,column=0,padx=50)
+
+entry=IntVar()
+
+chest=Entry(root,textvariable=entry,fg="blue",font=("TIMES NEW ROMAN",12))
+chest.grid(row=2,column=0)
+
+
+def myfunction():
+    grade = entry.get()
+    if grade <=69:
+        label['text'] = 'failed'.format(grade)
+        if grade <=69:
+            label2['text'] = 'sorry you failed'.format(grade)
+    elif grade <= 70 and grade <74:
+        label['text'] = " 5.0".format(grade)
+        if grade <= 70 and grade <74:
+            label2['text'] = 'sorry you failed'.format(grade)
+    elif grade == 71:
+        label['text'] = " 4.0 ".format(grade)
+        if grade == 71:
+            label2['text'] = 'conditional'.format(grade)
+    elif grade == 75 :
+        label['text'] = " 3.0 ".format(grade)
+        if grade == 75 :
+            label2['text'] = 'congrats you passed'   
+    elif grade <= 76 and grade <83:
+        label['text'] = " 2.2 - 2.9 ".format(grade)
+        if grade <= 76 and grade <83:
+             label2['text'] = 'congrats you passed'
+    elif grade <= 84 and grade <87:
+        label['text'] = " 1.8- 2.1 ".format(grade)
+        if grade <= 84 and grade <87:
+            label2['text'] = 'congrats you passed'.format(grade)     
+    elif grade <= 88 and grade <95:
+        label['text'] = " 1.3 - 1.7 ".format(grade).format(grade)
+        if grade <= 88 and grade <95:
+            label2['text'] = 'congrats you passed'.format(grade)
+    elif grade <= 96 and grade <100:
+        label['text'] = " 1.0 - 1.2  ".format(grade).format(grade)
+        if grade <= 96 and grade <100:
+            label2['text'] = 'congrats you passed'.format(grade)
+
+  
+btn=Button(root,command=myfunction,text="Enter",fg="black", font=("TIMES NEW ROMAN",13))
+btn.grid(row=3,column=0)
+label=Label(root,fg="black", font=("TIMES NEW ROMAN",11))
+label.grid(row=4,column=0)
+label2=Label(root,fg="black", font=("TIMES NEW ROMAN",11))
+label2.grid(row=5,column=0)
+
+root.mainloop()
