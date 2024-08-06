@@ -1,0 +1,25 @@
+from tkinter import *
+import random
+
+brunch = Tk()
+brunch.title("Is black a color or shade?")
+brunch.geometry("300x300")
+entry=StringVar()
+lbl=Label(brunch,text="Random Question: Is black a color or shade?",fg="black", font=("Calibri",16))
+lbl.grid(row=0,column=0,padx=80)
+
+
+def myfunction():
+    ans = entry.get().strip().lower()
+    list1 = ["Color", "Shade"]
+    for word in list1:
+        label2['text'] = (random.choice(list1))
+
+
+btn=Button(brunch,command=myfunction,text="Random Answer",fg="black", font=("Calibri",16))
+btn.grid(row=1,column=0)
+
+entry=StringVar()
+label2=Label(brunch,fg="black", font=("Calibri",16))
+label2.grid(row=2,column=0)
+brunch.mainloop()
